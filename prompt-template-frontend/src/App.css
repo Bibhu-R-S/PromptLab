@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #e8e7e3;
+  background: #171716;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+/* ✳ */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+select {
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #c99b72;
+  outline-offset: 2px;
+}
+::selection {
+  background: #59483a;
+  color: #fffaf4;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse at 50% -32%,
+    #302a24 0%,
+    #1b1a18 39%,
+    #171716 75%
+  );
+  color: #e8e7e3;
+}
+.app-header {
+  border-color: #33312e;
+  background: rgb(25 24 22 / 88%);
+}
+.app-header-inner {
+  min-height: 76px;
+}
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+.brand-mark::before {
+  content: "(+)";
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: #302820;
+  color: #d3a47c;
+  font-size: 21px;
+}
+.version-pill {
+  border-color: #3b3935;
+  background: #232220;
+  color: #a5a29c;
+}
+.app-main {
+  max-width: 1120px;
+  padding-top: clamp(36px, 6vw, 68px);
+}
+.eyebrow {
+  color: #d3a47c;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+}
+.page-title {
+  color: #f2f0eb;
+  letter-spacing: -0.045em;
+}
+.page-description {
+  color: #aaa7a0;
+}
+.workspace-grid {
+  align-items: start;
+  gap: 20px;
+}
+.workspace-panel {
+  min-width: 0;
+  border-color: #373532;
+  background: #211f1d;
+  border-radius: 16px;
+  box-shadow:
+    0 12px 32px rgb(0 0 0 / 13%),
+    0 1px 2px rgb(0 0 0 / 24%);
+}
+.panel-title {
+  color: #eceae5;
+  letter-spacing: -0.02em;
+}
+.preview-actions {
+  margin-top: 0;
+  gap: 8px;
+}
+.preview-toolbar {
+  flex-wrap: wrap;
+  align-items: center;
+}
+.action-button {
+  min-height: 40px;
+  border-radius: 9px;
+  transition:
+    transform 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+}
+.action-button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+.primary-action {
+  background: #d2a17a;
+  color: #211a15;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 18%);
+}
+.primary-action:not(:disabled):hover {
+  background: #dfb18b;
+}
+.generate-action {
+  background: #45413b;
+  color: #f2eee8;
+}
+.generate-action:not(:disabled):hover {
+  background: #524c44;
+}
+.secondary-action {
+  border-color: #45423e;
+  color: #d0cdc7;
+  background: #292724;
+}
+.secondary-action:hover {
+  background: #34312d;
+}
+.ready-pill {
+  font-weight: 600;
+}
+.preview-copy {
+  min-height: 210px;
+  border-color: #383633;
+  background: #191817;
+  color: #d0cdc7;
+  font-size: 13px;
+}
+.text-label {
+  color: #d5d2cc;
+}
+.form-control {
+  border-color: #45423e;
+  background: #191817;
+  color: #efede8;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+.form-control::placeholder {
+  color: #77746e;
+}
+.form-control:focus {
+  border-color: #c99b72;
+  box-shadow: 0 0 0 3px rgb(201 155 114 / 16%);
+  outline: none;
+}
+.template-description {
+  color: #a6a39d;
+}
+.response-panel {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+.response-content {
+  min-height: 64px;
+  border-color: #383633;
+  background: #191817;
+  color: #d0cdc7;
+}
+.response-placeholder {
+  color: #8f8b84;
+}
+.app-footer {
+  border-color: #33312e;
+  color: #89867f;
+}
+
+@media (max-width: 767px) {
+  .app-header-inner {
+    min-height: 68px;
+  }
+  .app-main {
+    padding-inline: 18px;
+    padding-bottom: 28px;
+  }
+  .workspace-grid {
+    gap: 14px;
+  }
+  .workspace-panel {
+    padding: 20px;
+    border-radius: 14px;
+  }
+  .preview-toolbar {
+    align-items: flex-start;
+  }
+  .preview-actions {
+    width: 100%;
+    order: 2;
+  }
+  .preview-actions .action-button {
+    flex: 1 1 auto;
+  }
+  .ready-pill {
+    margin-left: auto;
+  }
+  .preview-copy {
+    min-height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
